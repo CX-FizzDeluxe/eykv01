@@ -1,6 +1,5 @@
 package befaster.solutions;
 
-import befaster.runner.SolutionNotImplementedException;
 import java.util.ArrayList;
 import java.util.List;
 
