@@ -8,11 +8,11 @@ public class FizzBuzz {
     public static String fizzBuzz(Integer number) {
         List<String> results = new ArrayList<>();
         
-        if (number % 3 == 0) {
+        if (number % 3 == 0 || String.valueOf(number).contains("3")) {
             results.add("fizz");
         }
         
-        if (number % 5 == 0) {
+        if (number % 5 == 0 || String.valueOf(number).contains("5")) {
             results.add("buzz");
         }
         
