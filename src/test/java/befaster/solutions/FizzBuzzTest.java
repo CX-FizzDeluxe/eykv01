@@ -26,7 +26,7 @@ public class FizzBuzzTest {
     
     @Test
     public void dividesBy3And5() {
-        assertThat(FizzBuzz.fizzBuzz(15), equalTo("fizz buzz"));
+        assertThat(FizzBuzz.fizzBuzz(15), equalTo("fizz buzz fake deluxe"));
     }
     
     @Test
@@ -36,17 +36,17 @@ public class FizzBuzzTest {
     
     @Test
     public void contains3() {
-        assertThat(FizzBuzz.fizzBuzz(31), equalTo("fizz"));
+        assertThat(FizzBuzz.fizzBuzz(31), equalTo("fizz fake deluxe"));
     }
     
     @Test
     public void contains5() {
-        assertThat(FizzBuzz.fizzBuzz(52), equalTo("buzz"));
+        assertThat(FizzBuzz.fizzBuzz(52), equalTo("buzz deluxe"));
     }
     
     @Test
     public void contains5AndDividesBy3() {
-        assertThat(FizzBuzz.fizzBuzz(51), equalTo("fizz buzz"));
+        assertThat(FizzBuzz.fizzBuzz(51), equalTo("fizz buzz fake deluxe"));
     }
     
     @Test
@@ -61,15 +61,19 @@ public class FizzBuzzTest {
     
     @Test
     public void fakeDeluxe() {
-        assertThat(FizzBuzz.fizzBuzz(77), equalTo("fake deluxe"));
+        assertThat(FizzBuzz.fizzBuzz(77), equalTo("77"));
     }
     
     @Test 
     public void justDeluxe() {
-        assertThat(FizzBuzz.fizzBuzz(44), equalTo("deluxe"));
+        assertThat(FizzBuzz.fizzBuzz(44), equalTo("44"));
     }
     
+    @Test
     public void testFizzDeluxe() {
-        assertThat(FizzBuzz.fizzBuzz(66), equalTo("fizz deluxe"));
+        assertThat(FizzBuzz.fizzBuzz(66), equalTo("fizz"));
     }
+    
+    
+   
 }
