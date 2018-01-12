@@ -20,16 +20,33 @@ public class FizzBuzz {
             results.add("deluxe");
         }
         
-        StringBuilder resultBuilder = new StringBuilder();
-        results.stream().forEach((partOfResult) -> {
-            resultBuilder.append(partOfResult).append(" ");
-        });
-        
-        if (resultBuilder.toString().isEmpty()) {
+        if (results.isEmpty()) {
             return String.valueOf(number);
         }
         
-        return resultBuilder.deleteCharAt(resultBuilder.length() - 1).toString();
+        return concatenate(results, " ");
+    }
+    
+    public static String getDeluxeString(int number) {
+        List<String> results = new ArrayList<>();
+        
+        if (number % 2 != 0) {
+            results.add("fake");
+        }
+        
+        results.add("deluxe");
+        
+        return concatenate(results, " ");
+    }
+    
+    private static String concatenate(List<String> strings, String separator) {
+        StringBuilder resultBuilder = new StringBuilder();
+        strings.stream().forEach((currentString) -> {
+           resultBuilder.append(currentString).append(separator);
+        });
+        
+        return resultBuilder.delete(resultBuilder.length() - separator.length(),
+                resultBuilder.length()).toString();
     }
     
     static boolean isDeluxe(Integer number) {
