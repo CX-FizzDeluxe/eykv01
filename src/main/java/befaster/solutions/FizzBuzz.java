@@ -16,6 +16,10 @@ public class FizzBuzz {
             results.add("buzz");
         }
         
+        if (isDeluxe(number)) {
+            results.add("deluxe");
+        }
+        
         StringBuilder resultBuilder = new StringBuilder();
         results.stream().forEach((partOfResult) -> {
             resultBuilder.append(partOfResult).append(" ");
@@ -26,6 +30,27 @@ public class FizzBuzz {
         }
         
         return resultBuilder.deleteCharAt(resultBuilder.length() - 1).toString();
+    }
+    
+    static boolean isDeluxe(Integer number) {
+        if (number < 10) {
+            return false;
+        }
+        
+        int currentDigit, prevDigit = -1;
+        
+        while (number > 0) {
+            currentDigit = number % 10;
+            
+            if (prevDigit != -1 && currentDigit != prevDigit) {
+                return false;
+            }
+            
+            number = number/10;
+            prevDigit = currentDigit;
+        }
+        
+        return true;
     }
 
 }

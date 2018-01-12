@@ -54,4 +54,9 @@ public class FizzBuzzTest {
         assertThat(FizzBuzz.fizzBuzz(33), equalTo("fizz"));
     }
     
+    @Test
+    public void testIsDeluxe() {
+        assert FizzBuzz.isDeluxe(33);
+    }
+    
 }
