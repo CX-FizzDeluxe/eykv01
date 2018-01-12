@@ -33,4 +33,25 @@ public class FizzBuzzTest {
     public void dividesByNeither() {
         assertThat(FizzBuzz.fizzBuzz(7), equalTo("7"));
     }
+    
+    @Test
+    public void contains3() {
+        assertThat(FizzBuzz.fizzBuzz(31), equalTo("fizz"));
+    }
+    
+    @Test
+    public void contains5() {
+        assertThat(FizzBuzz.fizzBuzz(52), equalTo("buzz"));
+    }
+    
+    @Test
+    public void contains5AndDividesBy3() {
+        assertThat(FizzBuzz.fizzBuzz(51), equalTo("fizz buzz"));
+    }
+    
+    @Test
+    public void contains3AndDividesBy3() {
+        assertThat(FizzBuzz.fizzBuzz(33), equalTo("fizz"));
+    }
+    
 }
