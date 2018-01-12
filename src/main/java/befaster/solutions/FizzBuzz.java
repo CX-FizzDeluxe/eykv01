@@ -25,7 +25,7 @@ public class FizzBuzz {
             return String.valueOf(number);
         }
         
-        return resultBuilder.substring(resultBuilder.length() - 1);
+        return resultBuilder.deleteCharAt(resultBuilder.length() - 1).toString();
     }
 
 }
