@@ -11,12 +11,16 @@ public class FizzBuzz {
         
         if (number % 3 == 0 || String.valueOf(number).contains("3")) {
             results.add("fizz");
-            conditionsForDeluxe.add(FizzBuzz::contains3);
+            if (number % 3 == 0 && String.valueOf(number).contains("3")) {
+                conditionsForDeluxe.add(FizzBuzz::contains3);
+            }
         }
         
         if (number % 5 == 0 || String.valueOf(number).contains("5")) {
             results.add("buzz");
-            conditionsForDeluxe.add(FizzBuzz::contains5);
+            if (number % 5 == 0 && String.valueOf(number).contains("5")) {
+                conditionsForDeluxe.add(FizzBuzz::contains5);
+            }
         }
         
         if (isDeluxe(number, conditionsForDeluxe)) {

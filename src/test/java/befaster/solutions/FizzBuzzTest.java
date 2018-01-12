@@ -36,17 +36,17 @@ public class FizzBuzzTest {
     
     @Test
     public void contains3() {
-        assertThat(FizzBuzz.fizzBuzz(31), equalTo("fizz fake deluxe"));
+        assertThat(FizzBuzz.fizzBuzz(31), equalTo("fizz"));
     }
     
     @Test
     public void contains5() {
-        assertThat(FizzBuzz.fizzBuzz(52), equalTo("buzz deluxe"));
+        assertThat(FizzBuzz.fizzBuzz(52), equalTo("buzz"));
     }
     
     @Test
     public void contains5AndDividesBy3() {
-        assertThat(FizzBuzz.fizzBuzz(51), equalTo("fizz buzz fake deluxe"));
+        assertThat(FizzBuzz.fizzBuzz(51), equalTo("fizz buzz"));
     }
     
     @Test
