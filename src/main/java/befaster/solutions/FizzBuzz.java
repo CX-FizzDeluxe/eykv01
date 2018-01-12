@@ -69,5 +69,13 @@ public class FizzBuzz {
         
         return true;
     }
+    
+    private static boolean contains5(int number) {
+        return String.valueOf(number).contains("5");
+    }
 
+    @FunctionalInterface
+    public static interface ComplexInterface{
+        boolean someMethod(int number);
+    }
 }
