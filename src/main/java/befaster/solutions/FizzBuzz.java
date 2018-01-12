@@ -7,13 +7,16 @@ public class FizzBuzz {
 
     public static String fizzBuzz(Integer number) {
         List<String> results = new ArrayList<>();
+        List<ConditionInterface> conditionsForDeluxe = new ArrayList<>();
         
         if (number % 3 == 0 || String.valueOf(number).contains("3")) {
             results.add("fizz");
+            conditionsForDeluxe.add(FizzBuzz::contains3);
         }
         
         if (number % 5 == 0 || String.valueOf(number).contains("5")) {
             results.add("buzz");
+            conditionsForDeluxe.add(FizzBuzz::contains5);
         }
         
         if (isDeluxe(number)) {
@@ -49,7 +52,7 @@ public class FizzBuzz {
                 resultBuilder.length()).toString();
     }
     
-    static boolean isDeluxe(Integer number) {
+    static boolean isDeluxe(Integer number, List<ConditionInterface> conditions) {
         if (number < 10) {
             return false;
         }
@@ -73,9 +76,13 @@ public class FizzBuzz {
     private static boolean contains5(int number) {
         return String.valueOf(number).contains("5");
     }
+    
+    private static boolean contains3(int number) {
+        return String.valueOf(number).contains("3");
+    }
 
     @FunctionalInterface
-    public static interface ComplexInterface{
+    public static interface ConditionInterface{
         boolean someMethod(int number);
     }
 }
