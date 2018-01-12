@@ -17,7 +17,7 @@ public class FizzBuzz {
         }
         
         if (isDeluxe(number)) {
-            results.add("deluxe");
+            results.add(getDeluxeString(number));
         }
         
         if (results.isEmpty()) {

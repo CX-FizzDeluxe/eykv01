@@ -51,7 +51,7 @@ public class FizzBuzzTest {
     
     @Test
     public void contains3AndDividesBy3() {
-        assertThat(FizzBuzz.fizzBuzz(33), equalTo("fizz deluxe"));
+        assertThat(FizzBuzz.fizzBuzz(33), equalTo("fizz fake deluxe"));
     }
     
     @Test
@@ -70,12 +70,21 @@ public class FizzBuzzTest {
     }
     
     @Test
-    public void testFizzBuzzDeluxe() {
-        assertThat(FizzBuzz.fizzBuzz(555), equalTo("fizz buzz deluxe"));
+    public void testFizzBuzzFakeDeluxe() {
+        assertThat(FizzBuzz.fizzBuzz(555), equalTo("fizz buzz fake deluxe"));
     }
     
     @Test
+    public void fakeDeluxe() {
+        assertThat(FizzBuzz.fizzBuzz(77), equalTo("fake deluxe"));
+    }
+    
+    @Test 
     public void justDeluxe() {
-        assertThat(FizzBuzz.fizzBuzz(77), equalTo("deluxe"));
+        assertThat(FizzBuzz.fizzBuzz(44), equalTo("deluxe"));
+    }
+    
+    public void testFizzDeluxe() {
+        assertThat(FizzBuzz.fizzBuzz(66), equalTo("fizz deluxe"));
     }
 }
