@@ -55,21 +55,6 @@ public class FizzBuzzTest {
     }
     
     @Test
-    public void testIsDeluxe() {
-        assert FizzBuzz.isDeluxe(33);
-    }
-    
-    @Test
-    public void testIsNotDeluxe() {
-        assert !FizzBuzz.isDeluxe(5);
-    }
-    
-    @Test
-    public void testIsNotDeluxeMultiDigit() {
-        assert !FizzBuzz.isDeluxe(51);
-    }
-    
-    @Test
     public void testFizzBuzzFakeDeluxe() {
         assertThat(FizzBuzz.fizzBuzz(555), equalTo("fizz buzz fake deluxe"));
     }

@@ -19,7 +19,7 @@ public class FizzBuzz {
             conditionsForDeluxe.add(FizzBuzz::contains5);
         }
         
-        if (isDeluxe(number)) {
+        if (isDeluxe(number, conditionsForDeluxe)) {
             results.add(getDeluxeString(number));
         }
         
@@ -53,24 +53,7 @@ public class FizzBuzz {
     }
     
     static boolean isDeluxe(Integer number, List<ConditionInterface> conditions) {
-        if (number < 10) {
-            return false;
-        }
-        
-        int currentDigit, prevDigit = -1;
-        
-        while (number > 0) {
-            currentDigit = number % 10;
-            
-            if (prevDigit != -1 && currentDigit != prevDigit) {
-                return false;
-            }
-            
-            number = number/10;
-            prevDigit = currentDigit;
-        }
-        
-        return true;
+        return conditions.stream().anyMatch((condition) -> (condition.isMet(number)));
     }
     
     private static boolean contains5(int number) {
@@ -83,6 +66,6 @@ public class FizzBuzz {
 
     @FunctionalInterface
     public static interface ConditionInterface{
-        boolean someMethod(int number);
+        boolean isMet(int number);
     }
 }
